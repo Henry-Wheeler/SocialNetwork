@@ -1,0 +1,6 @@
+build/
+*.o
+*.pro.user
+moc_*
+ui_*
+*.app/
