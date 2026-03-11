@@ -2,6 +2,7 @@
 #include "ui_socialnetworkwindow.h"
 #include "network.h"
 #include "post.h"
+#include <QFontDatabase>
 
 SocialNetworkWindow::SocialNetworkWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,15 +10,21 @@ SocialNetworkWindow::SocialNetworkWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
+   QFontDatabase::addApplicationFont("/Users/henrywheeler/Desktop/CS62/HW4/social_network/Anton-Regular.ttf");
+   QFontDatabase::addApplicationFont("/Users/henrywheeler/Desktop/CS62/HW4/social_network/PlayfairDisplay-Medium.ttf");
+
+
+
     this->setStyleSheet("QMainWindow { background-color: #f5f0e8; }");
 
-    QString labelStyle = "QLabel { color: #2b2b2b; }";
-    ui->profileLabel->setStyleSheet(labelStyle);
+    QString labelStyle = "QLabel { color: #2b2b2b; font-family: Playfair Display; }";
+    ui->profileLabel->setStyleSheet("QLabel { color: #2b2b2b; font-family: Anton; font-size: 18px }");
     ui->messageLabel->setStyleSheet(labelStyle);
     ui->loginLabel->setStyleSheet(labelStyle);
     ui->bioLabel->setStyleSheet(labelStyle);
 
-    QString buttonStyle = "QPushButton { background-color: #e8784d; color: #ffffff; border: none; border-radius: 4px; }";
+    QString buttonStyle = "QPushButton { background-color: #e8784d; color: #ffffff; border: none; border-radius: 4px; font-family: Playfair Display; }";
 
     ui->loginButton->setStyleSheet(buttonStyle);
     ui->postButton->setStyleSheet(buttonStyle);
@@ -29,11 +36,11 @@ SocialNetworkWindow::SocialNetworkWindow(QWidget *parent)
     ui->likeButton4->setStyleSheet(buttonStyle);
     ui->likeButton5->setStyleSheet(buttonStyle);
 
-    ui->friendsWidget->setStyleSheet("QTableWidget {background-color: #e8e4dc; color: #2b2b2b; gridline-color: #d0ccc4; border: none; }"
-                                     "QHeaderView::section { background-color: #e8e4dc; color: #2b2b2b; border none; }");
+    ui->friendsWidget->setStyleSheet("QTableWidget {background-color: #e8e4dc; color: #2b2b2b; gridline-color: #d0ccc4; border: none; font-family: Playfair Display; }"
+                                     "QHeaderView::section { background-color: #e8e4dc; color: #2b2b2b; border none; font-family: Playfair Display; }");
 
-    ui->loginEdit->setStyleSheet("QTextEdit { background-color: #e8e4dc; color: #2b2b2b; border: none; }" );
-    ui->postEdit->setStyleSheet("QTextEdit { background-color: #e8e4dc; color: #2b2b2b; border: none; }" );
+    ui->loginEdit->setStyleSheet("QTextEdit { background-color: #e8e4dc; color: #2b2b2b; border: none; font-family: Playfair Display; }" );
+    ui->postEdit->setStyleSheet("QTextEdit { background-color: #e8e4dc; color: #2b2b2b; border: none; font-family: Playfair Display; }" );
 
     network = new Network();
     network->readUsers("users.txt");
