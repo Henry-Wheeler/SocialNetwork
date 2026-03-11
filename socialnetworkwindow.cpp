@@ -9,6 +9,32 @@ SocialNetworkWindow::SocialNetworkWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    this->setStyleSheet("QMainWindow { background-color: #f5f0e8; }");
+
+    QString labelStyle = "QLabel { color: #2b2b2b; }";
+    ui->profileLabel->setStyleSheet(labelStyle);
+    ui->messageLabel->setStyleSheet(labelStyle);
+    ui->loginLabel->setStyleSheet(labelStyle);
+    ui->bioLabel->setStyleSheet(labelStyle);
+
+    QString buttonStyle = "QPushButton { background-color: #e8784d; color: #ffffff; border: none; border-radius: 4px; }";
+
+    ui->loginButton->setStyleSheet(buttonStyle);
+    ui->postButton->setStyleSheet(buttonStyle);
+    ui->backButton->setStyleSheet(buttonStyle);
+    ui->addButton->setStyleSheet(buttonStyle);
+    ui->likeButton1->setStyleSheet(buttonStyle);
+    ui->likeButton2->setStyleSheet(buttonStyle);
+    ui->likeButton3->setStyleSheet(buttonStyle);
+    ui->likeButton4->setStyleSheet(buttonStyle);
+    ui->likeButton5->setStyleSheet(buttonStyle);
+
+    ui->friendsWidget->setStyleSheet("QTableWidget {background-color: #e8e4dc; color: #2b2b2b; gridline-color: #d0ccc4; border: none; }"
+                                     "QHeaderView::section { background-color: #e8e4dc; color: #2b2b2b; border none; }");
+
+    ui->loginEdit->setStyleSheet("QTextEdit { background-color: #e8e4dc; color: #2b2b2b; border: none; }" );
+    ui->postEdit->setStyleSheet("QTextEdit { background-color: #e8e4dc; color: #2b2b2b; border: none; }" );
+
     network = new Network();
     network->readUsers("users.txt");
     network->readPosts("posts.txt");
