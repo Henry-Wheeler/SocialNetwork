@@ -156,6 +156,9 @@ void Network::writeUsers(const char* fname) {
 		for(int friendIds : friends) {
 			fileOut << friendIds << " ";
 		}
+
+        fileOut << "\t" << user->getBio() << std::endl;
+
 		fileOut << std::endl;
 	}
 
